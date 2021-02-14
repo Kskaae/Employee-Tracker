@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS employee_db;
-CREATE DATABASE employee_db;
-USE employee_db;
+DROP DATABASE IF EXISTS department_db;
+CREATE DATABASE department_db;
+USE department_db;
 CREATE TABLE department (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30)
@@ -18,7 +18,6 @@ CREATE TABLE employee(
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
   role_id INT NOT NULL,
-  manager_id INT NOT NULL,
   FOREIGN KEY (role_id) REFERENCES role(id)
 );
 
@@ -32,6 +31,7 @@ VALUES ("manager",145000,1),("intern",0,2);
 --   * View departments, roles, employees
 
 --   * Update employee roles
+
 -- * **department**:
 --   * **id** - INT PRIMARY KEY
 --   * **name** - VARCHAR(30) to hold department name
